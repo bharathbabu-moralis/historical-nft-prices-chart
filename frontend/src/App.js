@@ -61,7 +61,7 @@ const App = () => {
         }
       );
       const data = await response.json();
-      setHistoricalData(data.result.reverse()); // Reverse the order of the historical data
+      setHistoricalData(data.result.reverse());
     } catch (error) {
       console.error("Error fetching historical data:", error);
     }
@@ -85,7 +85,7 @@ const App = () => {
         pointBackgroundColor: "#388E3C",
         pointBorderColor: "#4CAF50",
         fill: true,
-        tension: 0.4, // Curves the lines
+        tension: 0.4, 
       },
     ],
   };
@@ -140,6 +140,8 @@ const App = () => {
           <p className="text">Name: {metadata.name}</p>
           <p className="text">Symbol: {metadata.symbol}</p>
           <p className="text">Floor Price: {metadata.floor_price} ETH</p>
+          <p className="text">Floor Price (USD): {metadata.floor_price_usd} USD</p>
+          <p className="text">X: <a href={`https://x.com/${metadata.twitter_username}`} target="_blank" rel="noopener noreferrer">@{metadata.twitter_username}</a></p>
           <img
             src={metadata.collection_logo}
             alt="Collection Logo"
